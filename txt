@@ -1,0 +1,5 @@
+draw on 16x16 grid
+clean 
+change grid size
+choose colors
+rainbow draw 
