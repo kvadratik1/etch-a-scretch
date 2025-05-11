@@ -9,3 +9,8 @@
     border: 2px solid black;
     display: grid;
   }
+
+  .main-container {
+    display: flex;
+    flex-direction: row;
+  }

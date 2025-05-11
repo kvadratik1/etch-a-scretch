@@ -1,9 +1,10 @@
 const containerCell = document.querySelector("#container")
-const numberOfCells = 16 
+const clearButtonEl = document.querySelector("#clear-button")
+const NUMBER_OF_CELLS = 16 
 let isDrawing = false
 
-function createBoard (numberOfCells) {
-   const area = numberOfCells * numberOfCells
+function createBoard (NUMBER_OF_CELLS) {
+   const area = NUMBER_OF_CELLS * NUMBER_OF_CELLS
    for (let i = 0; i < area; i++) {
 
    const newCell = document.createElement("div")
@@ -21,12 +22,17 @@ function createBoard (numberOfCells) {
   }
 
    containerCell.style.display = "grid";
-   containerCell.style.gridTemplateColumns = `repeat(${numberOfCells}, 1fr)`;
-   containerCell.style.gridTemplateRows = `repeat(${numberOfCells}, 1fr)`;
+   containerCell.style.gridTemplateColumns = `repeat(${NUMBER_OF_CELLS}, 1fr)`;
+   containerCell.style.gridTemplateRows = `repeat(${NUMBER_OF_CELLS}, 1fr)`;
 }
 
 
 document.addEventListener("mouseup", () => {
    isDrawing = false
 })
- createBoard(16)
+ createBoard(NUMBER_OF_CELLS)
+
+clearButtonEl.addEventListener("click", () => {
+   containerCell.innerHTML = ""
+   createBoard(NUMBER_OF_CELLS)
+})
