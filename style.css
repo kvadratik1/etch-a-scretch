@@ -1,13 +1,18 @@
 .cell {
-    border: 1px solid #ddd;
+    border: none;
     background-color: white;
-  }
+    margin: 0;
+    padding: 0;
+ }
+  
   
   #container {
-    width: 500px;
-    height: 500px;
+    width: 1000px;
+    height: 1000px;
     border: 2px solid black;
     display: grid;
+    margin: 0;
+    padding: 0;
   }
 
   .main-container {
