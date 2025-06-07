@@ -1,8 +1,15 @@
 const containerCell = document.querySelector("#container")
 const clearButtonEl = document.querySelector("#clear-button")
 const changeSizeButtonEl = document.querySelector("#size")
+const colorPickerEl = document.querySelector("#color-picker")
+
+let currentColor = colorPickerEl.value
 const NUMBER_OF_CELLS = 16 
 let isDrawing = false
+
+colorPickerEl.addEventListener("input", () => {
+   currentColor = colorPickerEl.value
+ });
 
 function createBoard (NUMBER_OF_CELLS) {
    containerCell.innerHTML = ""
@@ -16,11 +23,11 @@ function createBoard (NUMBER_OF_CELLS) {
    newCell.style.height = scale + "px"
    newCell.addEventListener("mouseover", () => {
       if (isDrawing){
-         newCell.style.backgroundColor = "black"
+         newCell.style.backgroundColor = currentColor
       }
       newCell.addEventListener("mousedown", () => {
          isDrawing = true
-         newCell.style.backgroundColor = "black";
+         newCell.style.backgroundColor = currentColor
        })
    })
    containerCell.appendChild(newCell)
