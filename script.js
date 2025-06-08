@@ -2,14 +2,23 @@ const containerCell = document.querySelector("#container")
 const clearButtonEl = document.querySelector("#clear-button")
 const changeSizeButtonEl = document.querySelector("#size")
 const colorPickerEl = document.querySelector("#color-picker")
+const rainbowButtonEl = document.querySelector("#rainbow-button")
 
 let currentColor = colorPickerEl.value
 const NUMBER_OF_CELLS = 16 
 let isDrawing = false
+let rainbowMode = false 
 
 colorPickerEl.addEventListener("input", () => {
    currentColor = colorPickerEl.value
  });
+
+ function getRandomColor() {
+   const r = Math.floor(Math.random() * 256);
+   const g = Math.floor(Math.random() * 256);
+   const b = Math.floor(Math.random() * 256);
+   return `rgb(${r}, ${g}, ${b})`;
+}
 
 function createBoard (NUMBER_OF_CELLS) {
    containerCell.innerHTML = ""
@@ -23,11 +32,11 @@ function createBoard (NUMBER_OF_CELLS) {
    newCell.style.height = scale + "px"
    newCell.addEventListener("mouseover", () => {
       if (isDrawing){
-         newCell.style.backgroundColor = currentColor
+         newCell.style.backgroundColor = rainbowMode ? getRandomColor() : currentColor
       }
       newCell.addEventListener("mousedown", () => {
          isDrawing = true
-         newCell.style.backgroundColor = currentColor
+         newCell.style.backgroundColor = rainbowMode ? getRandomColor() : currentColor
        })
    })
    containerCell.appendChild(newCell)
@@ -57,3 +66,12 @@ changeSizeButtonEl.addEventListener("click", () => {
       createBoard(numberOfCells)
    }
 })
+
+rainbowButtonEl.addEventListener("click", () => {
+   if (rainbowMode === true) {
+      rainbowMode = false 
+   } else {
+      rainbowMode = true 
+   }
+})
+
