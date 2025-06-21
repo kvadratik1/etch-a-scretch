@@ -1,43 +1,44 @@
 .cell {
-    border: none;
-    background-color: white;
-    margin: 0;
-    padding: 0;
- }
-  
-  
-  #container {
-    width: 1000px;
-    height: 1000px;
-    border: 2px solid black;
-    display: grid;
-    margin: 0;
-    padding: 0;
-  }
+  border: none;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
 
-  .main-container {
-    display: flex;
-    flex-direction: row;
-  }
+#container {
+  width: 1000px;
+  height: 1000px;
+  border: 2px solid black;
+  display: grid;
+  margin: 0;
+  padding: 0;
+}
 
-  #button-container {
-    display: flex;
-    flex-direction: column;
-  }
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
 
-  #color-picker {
-    height: 100px;
-    width: 100px;
-  }
+#button-container {
+  display: flex;
+  flex-direction: column;
+}
 
-  #clear-button {
-    height: 50px;
-  }
+#color-picker {
+  height: 100px;
+  width: 100px;
+}
 
-  #size {
-    height: 50px;
-  }
+#clear-button,
+#size,
+#rainbow-button {
+  height: 50px;
+  margin-top: 10px;
+}
 
-  #rainbow-button {
-    height: 50px;
-  }
+#rainbow-button.active {
+  background-color: #ff80ff;
+  color: white;
+  font-weight: bold;
+  border: 2px solid black;
+}

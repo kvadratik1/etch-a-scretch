@@ -68,10 +68,7 @@ changeSizeButtonEl.addEventListener("click", () => {
 })
 
 rainbowButtonEl.addEventListener("click", () => {
-   if (rainbowMode === true) {
-      rainbowMode = false 
-   } else {
-      rainbowMode = true 
-   }
+   rainbowMode = !rainbowMode
+   rainbowButtonEl.classList.toggle("active", rainbowMode)
 })
 
