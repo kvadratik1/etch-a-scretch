@@ -28,8 +28,6 @@ function createBoard (NUMBER_OF_CELLS) {
 
    const newCell = document.createElement("div")
    newCell.classList.add("cell");
-   newCell.style.width = scale + "px"
-   newCell.style.height = scale + "px"
    newCell.addEventListener("mouseover", () => {
       if (isDrawing){
          newCell.style.backgroundColor = rainbowMode ? getRandomColor() : currentColor
